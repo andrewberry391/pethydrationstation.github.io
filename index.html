@@ -1,50 +1,182 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title></title>
-</head>
+<title>
+  Andrew Berry and Alice Patig
+  ECE 153B Final Project Site
+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+<!-- Setting the font of the entire document to be Cambria -->
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Cambria"}
+</style>
+<body class="w3-light-grey">
+
+<!-- Sets the max width of the page to 1400px -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Title of page and names -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Pet Hydration Station</b></h1>
+  <p>Made by <span class="w3-tag">Alice Patig and Andrew Berry</span></p>
+</header>
+
+<!-- Grid for different entries to site -->
+<div class="w3-row">
+
+<!-- Divisions of proposals and current projects -->
+<div class="w3-col l8 s12">
+  <!-- Entry to keep trck of current progress -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="/w3images/bridge.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Weekly Progression</b></h3>
+      <br>
+      <h5><i><span class="w3-opacity">February 9, 2020:</span></i></h5><div class="w3-container w3-white">
+      <p>This is now the start of week one of working on this project. We have come up with a our project as you can see in the proposal below. We also have made this website where we can keep an up to date log of how the project is going. To do's for this week are:</p>
+      <ul type="disc">
+        <li>Research and order parts online for project. Parts are listed in the proposal.</li>
+        <li>Learn how to use different protocols in lab3</li>
+        <li>Continue to refine this website for our projects needs</li>
+      </ul>
+    </div>
+  </div>
+  <hr>
+</div>
 <br>
-<style>body,h1,h2,h3,h4,h5 {font-family: "Cambria"}</style>
-<body style="background-color:powderblue;">
-	<img src="https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/i8EAAOSwcBpeKJSI/$_10.JPG?set_id=880000500F" alt="Kitten Drinking Fountain" style="float: left; width: 250px; height: 250px;">
-	<img src="https://media.mnn.com/assets/images/2017/02/kitten-drinking-glass-bowl.jpg.838x0_q80.jpg" alt="Kitten Drinking" style="float: right; width: 250px; height: 250px;">
-	<center><h1><b>Pet Hydration Station</b></h1></center>
-	<center><h3>Alice Patig, Andrew Berry</h3></center>
-	<center><h3><i>UCSB ECE 153B Final Project</i></h3></center>
-	<br><br><br><br>
-    <h2><u>Project Proposal:</u></h2>
-	<h2>Overview:</h2>
-	<p>For our project, we propose making an automatic pet hydration station, using a STMP32L47G. This project is motivated by our upbringing in homes with pets, during which we found that hydration is essential to our pet’s health and must be reliable.<br>		Physically the system is made up of four modules: a water bowl, a water dispenser with a valve, a motor to open and close the valve and a sensor fixed within the bowl, measuring the water level.<br>		The water dispenser will refill the pet’s water bowl after the water level falls below a certain threshold at which the sensor is no longer submerged in water.<br>		The sensor’s exposure will cause an interrupt. The response will be the rotation of the motor, causing the valve on the bottom of the water dispenser to open for a given period of time, thus allowing water to flow into the bowl. A second interrupt will close the valve by turning the motor, and thus the valve, in the opposite direction, thus stopping the water flow. As long as the sensor is submerged in water, no action will be taken. </p>
-	<h2>Peripherals:</h2>
-	<ul type="disc">
-		<li>Motor to open and close the water dispenser valve (Servo Motor)</li>
-		<li>Sensor to sense water level falling below threshold</li>
-	</ul>
-	<h2>Goals:</h2>
-	<p>Our goal is to learn more about how to interface with peripherals with Microcontrollers, such as the STMP32L47G, and thereby to create a project that is useful to us and other users. Our priority is to create a reliable pet hydration station. If further time and resources are available, we would like to expand this project and build a pet feeding station, based on the same principles.</p>
-	<h2>Software Design:</h2>
-	<p>While the sensor is submerged in water, no action is taken. An interrupt will occur when the sensor is no longer submerged in water. This will cause one of the GPIO pins to turn High/Low (depending on the sensor model we choose). In turn, this will cause an interrupt, which will trigger the movement of the motor (to open the valve) and start a timer. When the time elapses, a second interrupt will occur, triggering the movement of the motor to close the valve again. </p>
-	<h2>Group Responsibilities:</h2>
-	<ul type="disc">
-		<li>Andrew and Alice will work on the code together.</li>
-		<li>Alice will be the primary responsible for all hardware: selecting and ordering the parts (i.e. the humidity sensor, the motor, the water dispenser and the bowl)</li>
-		<li>Andrew will be the primary responsible for all software: design of peripheral interaction via serial interface.</li>
-	</ul>
-    <br><br><br>
-    <p>Website Last Updated: <i>2/10/2019</i></p>
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="https://www.litter-robot.com/blog/wp-content/uploads/2018/05/Water-Litter-Robot-Blog-760x335-1.jpg" alt="Cat Drinking Tap" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Project Proposal:   <span class="w3-opacity">February 10, 2020</span></b></h3>
+      <h5>Overview:</h5>
+    </div>
+    <div class="w3-container">
+      <p>For our project, we propose making an automatic pet hydration station, using a STMP32L47G. This project is motivated by our upbringing in homes with pets, during which we found that hydration is essential to our pet’s health and must be reliable.<br>   Physically the system is made up of four modules: a water bowl, a water dispenser with a valve, a motor to open and close the valve and a sensor fixed within the bowl, measuring the water level.<br>    The water dispenser will refill the pet’s water bowl after the water level falls below a certain threshold at which the sensor is no longer submerged in water.<br>   The sensor’s exposure will cause an interrupt. The response will be a buzzer noise to get the animal away and the rotation of the motor, causing the valve on the bottom of the water dispenser to open for a given period of time, thus allowing water to flow into the bowl. A second interrupt will stop the buzzer close the valve by turning the motor, and thus the valve, in the opposite direction, thus stopping the water flow. As long as the sensor is submerged in water, no action will be taken. </p>
+      <h5>Peripherals:</h5>
+      <ul type="disc">
+        <li>Motor to open and close the water dispenser valve (Servo Motor)</li>
+        <li>A buzzer i2S because its related to audio which is typically that protocol</li>
+        <li>Sensor to sense water level falling below threshold using some protocol most likely i2C</li>
+      </ul>
+      <h5>Goals:</h5>
+        <p>Our goal is to learn more about how to interface with peripherals with Microcontrollers, such as the STMP32L47G, and thereby to create a project that is useful to us and other users. Our priority is to create a reliable pet hydration station. If further time and resources are available, we would like to expand this project and build a pet feeding station, based on the same principles.</p>
+      <h5>Software Design:</h5>
+        <p>While the sensor is submerged in water, no action is taken. An interrupt will occur when the sensor is no longer submerged in water. This will cause one of the GPIO pins to turn High/Low (depending on the sensor model we choose). In turn, this will cause an interrupt, which willand trigger the buzzer and trigger the movement of the motor (to open the valve) and start a timer. When the time elapses, a second interrupt will occur, triggering the buzzer to stop and triggering the movement of the motor to close the valve again. </p>
+      <h5>Group Responsibilities:</h5>
+        <ul type="disc">
+          <li>Andrew and Alice will work on the code together.</li>
+          <li>Alice will be the primary responsible for all hardware: selecting and ordering the parts (i.e. the humidity sensor, the motor, the water dispenser and the bowl)</li>
+          <li>Andrew will be the primary responsible for all software: design of peripheral interaction via serial interface.</li>
+        </ul>
+    </div>
+  </div>
+  <hr>
+ 
+      <!--     <div class="w3-container">
+      <p></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="https://petcostumecenter.com/wp-content/uploads/2018/08/580413_PS_PAW_BILL_SUIT.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Andrew Berry</b></h4>
+      <p>I am a in my third year at the University of California, Santa Barbara studing Computer Engineering. I am very excited for this project 
+      because I am very passionate applying my skills to real world applications even if it is something as simple as keeping your pets fed! I 
+      am escpecially excited to work with the STMP32L476VG discovery board microcontroller more and integrate more peripherals.</p>
+    </div>
+  </div><hr>
+</div><hr>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="https://i.imgur.com/FFHmPJo.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Alice Patig</b></h4>
+      <p>I am a fourth year Electrical Engineering student at the University of Califronia, Santa Barbara.</p>
+    </div>
+  </div><hr>
+</div><hr>
+  
+  <!-- Posts -->
+  <!-- <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Popular Posts</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Lorem</span><br>
+        <span>Sed mattis nunc</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Ipsum</span><br>
+        <span>Praes tinci sed</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Dorum</span><br>
+        <span>Ultricies congue</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Mingsum</span><br>
+        <span>Lorem ipsum dipsum</span>
+      </li>  
+    </ul>
+  </div> -->
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <!-- <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
+    </p>
+    </div>
+  </div> -->
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
+  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
