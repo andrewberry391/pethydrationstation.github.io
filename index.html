@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<br>
+<style>body,h1,h2,h3,h4,h5 {font-family: "Cambria"}</style>
+<body style="background-color:powderblue;">
+	<img src="https://i.ebayimg.com/00/s/ODAwWDgwMA==/z/i8EAAOSwcBpeKJSI/$_10.JPG?set_id=880000500F" alt="Kitten Drinking Fountain" style="float: left; width: 250px; height: 250px;">
+	<img src="https://media.mnn.com/assets/images/2017/02/kitten-drinking-glass-bowl.jpg.838x0_q80.jpg" alt="Kitten Drinking" style="float: right; width: 250px; height: 250px;">
+	<center><h1><b>Pet Hydration Station</b></h1></center>
+	<center><h3>Alice Patig, Andrew Berry</h3></center>
+	<center><h3><i>UCSB ECE 153B Final Project</i></h3></center>
+	<br><br><br><br>
+    <h2><u>Project Proposal:</u></h2>
+	<h2>Overview:</h2>
+	<p>For our project, we propose making an automatic pet hydration station, using a STMP32L47G. This project is motivated by our upbringing in homes with pets, during which we found that hydration is essential to our pet’s health and must be reliable.<br>		Physically the system is made up of four modules: a water bowl, a water dispenser with a valve, a motor to open and close the valve and a sensor fixed within the bowl, measuring the water level.<br>		The water dispenser will refill the pet’s water bowl after the water level falls below a certain threshold at which the sensor is no longer submerged in water.<br>		The sensor’s exposure will cause an interrupt. The response will be the rotation of the motor, causing the valve on the bottom of the water dispenser to open for a given period of time, thus allowing water to flow into the bowl. A second interrupt will close the valve by turning the motor, and thus the valve, in the opposite direction, thus stopping the water flow. As long as the sensor is submerged in water, no action will be taken. </p>
+	<h2>Peripherals:</h2>
+	<ul type="disc">
+		<li>Motor to open and close the water dispenser valve (Servo Motor)</li>
+		<li>Sensor to sense water level falling below threshold</li>
+	</ul>
+	<h2>Goals:</h2>
+	<p>Our goal is to learn more about how to interface with peripherals with Microcontrollers, such as the STMP32L47G, and thereby to create a project that is useful to us and other users. Our priority is to create a reliable pet hydration station. If further time and resources are available, we would like to expand this project and build a pet feeding station, based on the same principles.</p>
+	<h2>Software Design:</h2>
+	<p>While the sensor is submerged in water, no action is taken. An interrupt will occur when the sensor is no longer submerged in water. This will cause one of the GPIO pins to turn High/Low (depending on the sensor model we choose). In turn, this will cause an interrupt, which will trigger the movement of the motor (to open the valve) and start a timer. When the time elapses, a second interrupt will occur, triggering the movement of the motor to close the valve again. </p>
+	<h2>Group Responsibilities:</h2>
+	<ul type="disc">
+		<li>Andrew and Alice will work on the code together.</li>
+		<li>Alice will be the primary responsible for all hardware: selecting and ordering the parts (i.e. the humidity sensor, the motor, the water dispenser and the bowl)</li>
+		<li>Andrew will be the primary responsible for all software: design of peripheral interaction via serial interface.</li>
+	</ul>
+    <br><br><br>
+    <p>Website Last Updated: <i>2/10/2019</i></p>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
