@@ -41,18 +41,65 @@ body,h1,h2,h3,h4,h5 {font-family: "Cambria"}
     <div class="w3-container">
       <h3><b>Weekly Progression</b></h3>
       <hr>
-      <h5><i><span class="w3-opacity">February 9, 2020:</span></i></h5><div class="w3-container w3-white">
-      <p>This is now the start of week one of working on this project. We have come up with a our project as you can see in the proposal below. We also have made this website where we can keep an up to date log of how the project is going. To do's for this week are:</p>
-      <ul type="disc">
-        <li>Research and order parts online for project. Parts are listed in the proposal.</li>
-        <li>Learn how to use different protocols in lab3</li>
-        <li>Continue to refine this website for our projects needs</li>
-      </ul>
+      <h5><i><span class="w3-opacity">February 21, 2020:</span></i></h5>
+      <div class="w3-container w3-white">
+        <p>In this first week of working on our hydration station, we were planning to (1) research and order parts online, (2) learn how to use different protocols in lab 3, and (3) continue to refine our website. We are successfully competing these tasks. The progress in each area is listed below.</p>
+        <ol>
+          <li>Research and order parts online for the project. We have researched and bought the following items:
+            <ul type="disc">
+              <li>
+                A servo motor to open and close the water dispenser valve. We chose the SG90 Digital Servo motor. We chose it because of its availability in the shop (no long associated delivery time) and its low cost.  One potential draw back of this motor could be that it is not strong enough to open and close the water dispenser valve. Once we have the water dispenser, we will be able to test if it is powerful enough. 
+              </li>
+              <li>
+                Sensor to sense water level falling below threshold using I2C. We chose the Adafruit STEMMA Soil Sensor - I2C Capacitive Moisture Sensor (<a href="https://www.adafruit.com/product/4026">https://www.adafruit.com/product/4026</a>). We chose this sensor, as it operates with I2C, costs only 7.50 USD and has been proven to work well in a project our peers conduced. 
+              </li>
+            </ul>
+          </li>
+          <li>Learn how to use different protocols
+            <ul type="disc">
+              <li>
+                This week, we have been completing lab 3. In this lab we have learned how to use UART and how to interface with a Bluetooth module using it. Furthermore, we learned to use SPI to receive gyroscope measurements. We will be using I2C in order to receive temperature measurements. This knowledge will be important for our project and we will likely be able to use some of the functions we wrote this week to communicate with the STEMMA Soil Sensor and all other peripherals. 
+              </li>
+            </ul>
+          </li>
+          <li>Continue to refine our website:
+            <ul type="disc">
+              <li>We now both have access to editing this website (previously we would log in via one of our accounts). We have added a block diagram to better represent the modules of our project (see “Project Proposal” below).
+              </li>
+            </ul>
+          </li>
+        </ol>
+        <p>To do next week:</p>
+        <ul tpye="disc">
+          <li>
+            Research and buy a water dispenser and a water dispenser valve. 
+          </li>
+          <li>
+            Test the servo motor on this dispenser to allow for some time to order a stronger motor if necessary. 
+          </li>
+          <li>
+            Finish lab 3, and therefore become familiar with I2C in order to start writing code for our project. 
+          </li>
+        </ul>
+      </div>
+      <br>
+      <hr>
+
+
+      <h5><i><span class="w3-opacity">February 9, 2020:</span></i></h5>
+      <div class="w3-container w3-white">
+        <p>This is now the start of week one of working on this project. We have come up with a our project as you can see in the proposal below. We also have made this website where we can keep an up to date log of how the project is going. To do's for this week are:</p>
+        <ul type="disc">
+          <li>Research and order parts online for project. Parts are listed in the proposal.</li>
+          <li>Learn how to use different protocols in lab3</li>
+          <li>Continue to refine this website for our projects needs</li>
+        </ul>
+      </div>
     </div>
+    <br>
+    <hr>
   </div>
-  <hr>
-</div>
-<br>
+  <br>
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
     <img src="https://www.litter-robot.com/blog/wp-content/uploads/2018/05/Water-Litter-Robot-Blog-760x335-1.jpg" alt="Cat Drinking Tap" style="width:100%">
@@ -67,7 +114,7 @@ body,h1,h2,h3,h4,h5 {font-family: "Cambria"}
       <ul type="disc">
         <li>Motor to open and close the water dispenser valve (Servo Motor)</li>
         <li>A buzzer i2S because its related to audio which is typically that protocol</li>
-        <li>Sensor to sense water level falling below threshold using some protocol most likely i2C</li>
+        <li>Sensor to sense water level falling below threshold using some protocol most likely I2C</li>
       </ul>
       <h5>Goals:</h5>
         <p>Our goal is to learn more about how to interface with peripherals with Microcontrollers, such as the STMP32L47G, and thereby to create a project that is useful to us and other users. Our priority is to create a reliable pet hydration station. If further time and resources are available, we would like to expand this project and build a pet feeding station, based on the same principles.</p>
