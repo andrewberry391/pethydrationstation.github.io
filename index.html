@@ -4,104 +4,131 @@
   Andrew Berry and Alice Patig
   ECE 153B Final Project Site
 </title>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-
-<!-- Setting the font of the entire document to be Cambria -->
 <style>
-body,h1,h2,h3,h4,h5 {font-family: "Cambria"}
+  body,h1,h2,h3,h4,h5 {font-family: "Cambria"}
+  body {
+    margin: 0;
+    font-family: Cambria;
+  }
+
+  .top-container {
+    background-color: #f1f1f1;
+    padding: 30px;
+    text-align: center;
+    font-family: Cambria;
+  }
+
+  .header {
+    padding: 0px;
+    background: #555;
+    color: #f1f1f1;
+    font-family: Cambria;
+  }
+
+  .content {
+    padding: 20px;
+    font-family: Cambria;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-family: Cambria;
+  }
+
+  .sticky + .content {
+    padding-top: 72px;
+    font-family: Cambria;
+  }
 </style>
 <body class="w3-light-grey">
 
-
-
-<!-- add rainbow cat -->
-
-
-
-<!-- Sets the max width of the page to 1400px -->
 <div class="w3-content" style="max-width:1400px">
 
-<!-- Title of page and names -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1><b>Pet Hydration Station</b></h1>
-  <p>Made by <span class="w3-tag">Alice Patig and Andrew Berry</span></p>
-</header>
+  <!-- Title of page and names -->
+  <header class="top-container"> 
+    <h1><b>Pet Hydration Station</b></h1>
+    <p>Made by <span class="w3-tag">Alice Patig and Andrew Berry</span></p>
+  </header>
 
-<!-- Grid for different entries to site -->
-<div class="w3-row">
+  <div class="w3-bar w3-black header" id="myHeader">
+    <button class="w3-bar-item w3-button" onclick="openTab('Weekly Progress')">Weekly Progress</button>
+    <button class="w3-bar-item w3-button" onclick="openTab('Project Proposal')">Project Proposal</button>
+    <button class="w3-bar-item w3-button" onclick="openTab('About Us')">About Us</button>
+  </div>
 
-<!-- Divisions of proposals and current projects -->
-<div class="w3-col l8 s12">
-  <!-- Entry to keep trck of current progress -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Norway" style="width:100%">
-    <div class="w3-container">
-      <h3><b>Weekly Progression</b></h3>
-      <hr>
-      <h5><i><span class="w3-opacity">February 21, 2020:</span></i></h5>
-      <div class="w3-container w3-white">
-        <p>In this first week of working on our hydration station, we were planning to (1) research and order parts online, (2) learn how to use different protocols in lab 3, and (3) continue to refine our website. We are successfully competing these tasks. The progress in each area is listed below.</p>
-        <ol>
-          <li>Research and order parts online for the project. We have researched and bought the following items:
-            <ul type="circle">
+  <div class="w3-container content tab" id="Weekly Progress">
+    <!-- Divisions of proposals and current projects -->
+    <div class="w3-col l8 s12">
+      <!-- Entry to keep trck of current progress -->
+      <div class="w3-card-4 w3-margin w3-white">
+      <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Norway" style="width:100%">
+        <div class="w3-container">
+          <h3><b>Weekly Progression</b></h3>
+          <hr>
+          <h5><i><span class="w3-opacity">February 21, 2020:</span></i></h5>
+          <div class="w3-container w3-white">
+            <p>In this first week of working on our hydration station, we were planning to (1) research and order parts online, (2) learn how to use different protocols in lab 3, and (3) continue to refine our website. We are successfully competing these tasks. The progress in each area is listed below.</p>
+            <ol>
+              <li>Research and order parts online for the project. We have researched and bought the following items:
+                <ul type="circle">
+                  <li>
+                    A servo motor to open and close the water dispenser valve. We chose the SG90 Digital Servo motor. We chose it because of its availability in the shop (no long associated delivery time) and its low cost.  One potential draw back of this motor could be that it is not strong enough to open and close the water dispenser valve. Once we have the water dispenser, we will be able to test if it is powerful enough. 
+                  </li>
+                  <li>
+                    Sensor to sense water level falling below threshold using I2C. We chose the Adafruit STEMMA Soil Sensor - I2C Capacitive Moisture Sensor (<a href="https://www.adafruit.com/product/4026">https://www.adafruit.com/product/4026</a>). We chose this sensor, as it operates with I2C, costs only 7.50 USD and has been proven to work well in a project our peers conduced. 
+                  </li>
+                </ul>
+              </li>
+              <li>Learn how to use different protocols
+                <ul type="circle">
+                  <li>
+                    This week, we have been completing lab 3. In this lab we have learned how to use UART and how to interface with a Bluetooth module using it. Furthermore, we learned to use SPI to receive gyroscope measurements. We will be using I2C in order to receive temperature measurements. This knowledge will be important for our project and we will likely be able to use some of the functions we wrote this week to communicate with the STEMMA Soil Sensor and all other peripherals. 
+                  </li>
+                </ul>
+              </li>
+              <li>Continue to refine our website:
+                <ul type="circle">
+                  <li>We now both have access to editing this website (previously we would log in via one of our accounts). We have added a block diagram to better represent the modules of our project (see “Project Proposal” below).
+                  </li>
+                </ul>
+              </li>
+            </ol>
+            <p>To do next week:</p>
+            <ul tpye="disc">
               <li>
-                A servo motor to open and close the water dispenser valve. We chose the SG90 Digital Servo motor. We chose it because of its availability in the shop (no long associated delivery time) and its low cost.  One potential draw back of this motor could be that it is not strong enough to open and close the water dispenser valve. Once we have the water dispenser, we will be able to test if it is powerful enough. 
+                Research and buy a water dispenser and a water dispenser valve. 
               </li>
               <li>
-                Sensor to sense water level falling below threshold using I2C. We chose the Adafruit STEMMA Soil Sensor - I2C Capacitive Moisture Sensor (<a href="https://www.adafruit.com/product/4026">https://www.adafruit.com/product/4026</a>). We chose this sensor, as it operates with I2C, costs only 7.50 USD and has been proven to work well in a project our peers conduced. 
+                Test the servo motor on this dispenser to allow for some time to order a stronger motor if necessary. 
+              </li>
+              <li>
+                Finish lab 3, and therefore become familiar with I2C in order to start writing code for our project. 
               </li>
             </ul>
-          </li>
-          <li>Learn how to use different protocols
-            <ul type="circle">
-              <li>
-                This week, we have been completing lab 3. In this lab we have learned how to use UART and how to interface with a Bluetooth module using it. Furthermore, we learned to use SPI to receive gyroscope measurements. We will be using I2C in order to receive temperature measurements. This knowledge will be important for our project and we will likely be able to use some of the functions we wrote this week to communicate with the STEMMA Soil Sensor and all other peripherals. 
-              </li>
+          </div>
+          <br>
+          <hr>
+          <h5><i><span class="w3-opacity">February 9, 2020:</span></i></h5>
+          <div class="w3-container w3-white">
+            <p>This is now the start of week one of working on this project. We have come up with a our project as you can see in the proposal below. We also have made this website where we can keep an up to date log of how the project is going. To do's for this week are:</p>
+            <ul type="disc">
+              <li>Research and order parts online for project. Parts are listed in the proposal.</li>
+              <li>Learn how to use different protocols in lab3</li>
+              <li>Continue to refine this website for our projects needs</li>
             </ul>
-          </li>
-          <li>Continue to refine our website:
-            <ul type="circle">
-              <li>We now both have access to editing this website (previously we would log in via one of our accounts). We have added a block diagram to better represent the modules of our project (see “Project Proposal” below).
-              </li>
-            </ul>
-          </li>
-        </ol>
-        <p>To do next week:</p>
-        <ul tpye="disc">
-          <li>
-            Research and buy a water dispenser and a water dispenser valve. 
-          </li>
-          <li>
-            Test the servo motor on this dispenser to allow for some time to order a stronger motor if necessary. 
-          </li>
-          <li>
-            Finish lab 3, and therefore become familiar with I2C in order to start writing code for our project. 
-          </li>
-        </ul>
-      </div>
-      <br>
-      <hr>
-
-
-      <h5><i><span class="w3-opacity">February 9, 2020:</span></i></h5>
-      <div class="w3-container w3-white">
-        <p>This is now the start of week one of working on this project. We have come up with a our project as you can see in the proposal below. We also have made this website where we can keep an up to date log of how the project is going. To do's for this week are:</p>
-        <ul type="disc">
-          <li>Research and order parts online for project. Parts are listed in the proposal.</li>
-          <li>Learn how to use different protocols in lab3</li>
-          <li>Continue to refine this website for our projects needs</li>
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
-    <br>
-    <hr>
   </div>
-  <br>
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
+
+
+  <div id="Project Proposal" class="w3-container content tab" style="display:none">
+    <div class="w3-card-4 w3-margin w3-white">
     <img src="https://www.litter-robot.com/blog/wp-content/uploads/2018/05/Water-Litter-Robot-Blog-760x335-1.jpg" alt="Cat Drinking Tap" style="width:100%">
     <div class="w3-container">
       <h3><b>Project Proposal:   <span class="w3-opacity">February 10, 2020</span></b></h3>
@@ -130,104 +157,61 @@ body,h1,h2,h3,h4,h5 {font-family: "Cambria"}
         <img src="https://i.imgur.com/TwrIlMc.jpg" alt="Project Block Diagram" style="width:100%">
     </div>
   </div>
-  <hr>
- 
-      <!--     <div class="w3-container">
-      <p></p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+  </div>
+
+  <div id="About Us" class="w3-container content tab" style="display:none">
+    <div class="w3-col l8 s12">
+      <!-- About Card -->
+      <div class="w3-card w3-margin w3-margin-top">
+        <img src="https://petcostumecenter.com/wp-content/uploads/2018/08/580413_PS_PAW_BILL_SUIT.jpg" style="width:100%">
+        <div class="w3-container w3-white">
+          <h4><b>Andrew Berry</b></h4>
+          <hr>
+          <p>I am a in my third year at the University of California, Santa Barbara studing Computer Engineering. I am very excited for this project 
+          because I am very passionate applying my skills to real world applications even if it is something as simple as keeping your pets fed! I 
+          am escpecially excited to work with the STMP32L476VG discovery board microcontroller more and integrate more peripherals.</p>
         </div>
-        <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+      </div><hr>
+    </div><hr>
+
+    <!-- Introduction menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-card w3-margin w3-margin-top">
+        <img src="https://i.imgur.com/FFHmPJo.jpg" style="width:100%">
+        <div class="w3-container w3-white">
+          <h4><b>Alice Patig</b></h4>
+          <hr>
+          <p>I am a third year Electrical Engineering student at the University of Califronia, Santa Barbara.</p>
         </div>
-      </div>
-    </div>
-  </div> -->
-<!-- END BLOG ENTRIES -->
+      </div><hr>
+    </div><hr>
+  </div>
 </div>
 
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="https://petcostumecenter.com/wp-content/uploads/2018/08/580413_PS_PAW_BILL_SUIT.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>Andrew Berry</b></h4>
-      <hr>
-      <p>I am a in my third year at the University of California, Santa Barbara studing Computer Engineering. I am very excited for this project 
-      because I am very passionate applying my skills to real world applications even if it is something as simple as keeping your pets fed! I 
-      am escpecially excited to work with the STMP32L476VG discovery board microcontroller more and integrate more peripherals.</p>
-    </div>
-  </div><hr>
-</div><hr>
+<script>
+function openTab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(tabName).style.display = "block";  
+}
 
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top">
-  <img src="https://i.imgur.com/FFHmPJo.jpg" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>Alice Patig</b></h4>
-      <hr>
-      <p>I am a third year Electrical Engineering student at the University of Califronia, Santa Barbara.</p>
-    </div>
-  </div><hr>
-</div><hr>
-  
-  <!-- Posts -->
-  <!-- <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/workshop.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Lorem</span><br>
-        <span>Sed mattis nunc</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/gondol.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Ipsum</span><br>
-        <span>Praes tinci sed</span>
-      </li> 
-      <li class="w3-padding-16">
-        <img src="/w3images/skies.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Dorum</span><br>
-        <span>Ultricies congue</span>
-      </li>   
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/w3images/rock.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
-        <span class="w3-large">Mingsum</span><br>
-        <span>Lorem ipsum dipsum</span>
-      </li>  
-    </ul>
-  </div> -->
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <!-- <div class="w3-card w3-margin">
-    <div class="w3-container w3-padding">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">New York</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">London</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">IKEA</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">NORWAY</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">DIY</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Ideas</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Baby</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Family</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">News</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Clothing</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Sports</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Games</span>
-    </p>
-    </div>
-  </div> -->
-  
-<!-- END Introduction Menu -->
-</div>
+window.onscroll = function() {scroller()};
 
-<!-- END GRID -->
-</div><br>
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
 
-<!-- END w3-content -->
-</div>
+function scroller() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
 
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
