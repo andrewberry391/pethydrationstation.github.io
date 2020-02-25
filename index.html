@@ -273,10 +273,12 @@
     if(currentIndex == x.length-1){
       currentIndex = x.length-1;
       document.getElementById("nextButton").disabled = true;
+      document.getElementById("previousButton").disabled = false;
     }
     else if(currentIndex == 0){
       currentIndex = 0;
       document.getElementById("previousButton").disabled = true;
+      document.getElementById("nextButton").disabled = false;
     }
     else{
       document.getElementById("previousButton").disabled = false;
