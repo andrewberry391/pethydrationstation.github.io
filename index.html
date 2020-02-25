@@ -15,22 +15,38 @@
     }
 
     .top-container {
-      background-color: #f1f1f1;
-      padding: 30px;
+      background-color: #008da3;
+      padding: 5px;
       text-align: center;
+      font-family: Cambria;
+    }
+
+    .bottom-container {
+      background-color: #008da3;
+      padding: 20px;
+      text-align: left;
       font-family: Cambria;
     }
 
     .header {
       padding: 0px;
-      background: #555;
+      background: #007183;
       color: #f1f1f1;
       font-family: Cambria;
     }
 
     .content {
       padding: 20px;
+      background: ##eafcff;
       font-family: Cambria;
+    }
+
+    .titles {
+      padding: 0px;
+      background: ##eafcff;
+      color: grey;
+      font-family: Cambria;
+      font-style: italic;
     }
 
     .sticky {
@@ -40,39 +56,58 @@
       font-family: Cambria;
     }
 
+    .sticky + .tab {
+      padding-top: 39px;
+      font-family: Cambria;
+    }
+    .sticky + .tab + .tab2 {
+      padding-top: 39px;
+      font-family: Cambria;
+    }
+
     .sticky + .content {
       padding-top: 72px;
       font-family: Cambria;
     }
+
+    .card {
+      background: #eafcff
+    }
+
+    hr {
+      top: 20px; 
+      border: none; 
+      height: 1px; 
+      background: #004752; 
+      margin-bottom: 20px; 
+    } 
   </style>
   <link rel="icon" href="http://example.com/favicon.png">
 </head>
-<body class="w3-light-grey">
+<body style="background: #eff9fa">
 
 <div class="w3-content" style="max-width:1400px">
 
   <!-- Title of page and names -->
-  <header class="top-container"> 
+  <header class="top-container" style="color:#fff"> 
     <h1><b>Pet Hydration Station</b></h1>
-    <p>Made by <span class="w3-tag">Alice Patig and Andrew Berry</span></p>
+    <p>Made by Alice Patig and Andrew Berry</p>
   </header>
 
-  <div class="w3-bar w3-black header" id="myHeader">
+  <div class="w3-bar header" id="myHeader">
     <button class="w3-bar-item w3-button" onclick="openTab('Weekly Progress')">Weekly Progress</button>
     <button class="w3-bar-item w3-button" onclick="openTab('Project Proposal')">Project Proposal</button>
     <button class="w3-bar-item w3-button" onclick="openTab('About Us')">About Us</button>
   </div>
 
-  <div class="w3-container content tab" id="Weekly Progress">
-    <!-- Divisions of proposals and current projects -->
-    <!-- Entry to keep trck of current progress -->
-    <div class="w3-card-4 w3-margin w3-white">
+  <div class="tab" id="Weekly Progress">
     <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Norway" style="width:100%">
+    <div class="content">
       <div class="w3-container">
         <h3><b>Weekly Progression</b></h3>
         <hr>
-        <h5><i><span class="w3-opacity">February 21, 2020:</span></i></h5>
-        <div class="w3-container w3-white">
+        <h5><i><span class = "titles">February 21, 2020:</span></i></h5>
+        <div class="w3-container">
           <p>In this first week of working on our hydration station, we were planning to (1) research and order parts online, (2) learn how to use different protocols in lab 3, and (3) continue to refine our website. We are successfully competing these tasks. The progress in each area is listed below.</p>
           <ol>
             <li>Research and order parts online for the project. We have researched and bought the following items:
@@ -113,9 +148,9 @@
           </ul>
         </div>
         <br>
-        <hr>
-        <h5><i><span class="w3-opacity">February 9, 2020:</span></i></h5>
-        <div class="w3-container w3-white">
+        <hr />
+        <h5><i><span class = "titles">February 9, 2020:</span></i></h5>
+        <div class="w3-container">
           <p>This is now the start of week one of working on this project. We have come up with a our project as you can see in the proposal below. We also have made this website where we can keep an up to date log of how the project is going. To do's for this week are:</p>
           <ul type="disc">
             <li>Research and order parts online for project. Parts are listed in the proposal.</li>
@@ -128,56 +163,47 @@
   </div>
 
 
-  <div id="Project Proposal" class="w3-container content tab" style="display:none">
-    <div class="w3-card-4 w3-margin w3-white">
+  <div id="Project Proposal" class="tab tab2" style="display:none">
     <img src="https://www.litter-robot.com/blog/wp-content/uploads/2018/05/Water-Litter-Robot-Blog-760x335-1.jpg" alt="Cat Drinking Tap" style="width:100%">
-    <div class="w3-container">
-      <h3><b>Project Proposal:   <span class="w3-opacity">February 10, 2020</span></b></h3>
-      <hr>
-      <h5>Overview:</h5>
-    </div>
-    <div class="w3-container">
-      <p>For our project, we propose making an automatic pet hydration station, using a STMP32L47G. This project is motivated by our upbringing in homes with pets, during which we found that hydration is essential to our pet’s health and must be reliable.<br>   Physically the system is made up of four modules: a water bowl, a water dispenser with a valve, a motor to open and close the valve and a sensor fixed within the bowl, measuring the water level.<br>    The water dispenser will refill the pet’s water bowl after the water level falls below a certain threshold at which the sensor is no longer submerged in water.<br>   The sensor’s exposure will cause an interrupt. The response will be a buzzer noise to get the animal away and the rotation of the motor, causing the valve on the bottom of the water dispenser to open for a given period of time, thus allowing water to flow into the bowl. A second interrupt will stop the buzzer close the valve by turning the motor, and thus the valve, in the opposite direction, thus stopping the water flow. As long as the sensor is submerged in water, no action will be taken. </p>
-      <h5>Peripherals:</h5>
-      <ul type="disc">
-        <li>Motor to open and close the water dispenser valve (Servo Motor)</li>
-        <li>A buzzer i2S because its related to audio which is typically that protocol</li>
-        <li>Sensor to sense water level falling below threshold using some protocol most likely I2C</li>
-      </ul>
-      <h5>Goals:</h5>
-        <p>Our goal is to learn more about how to interface with peripherals with Microcontrollers, such as the STMP32L47G, and thereby to create a project that is useful to us and other users. Our priority is to create a reliable pet hydration station. If further time and resources are available, we would like to expand this project and build a pet feeding station, based on the same principles.</p>
-      <h5>Software Design:</h5>
-        <p>While the sensor is submerged in water, no action is taken. An interrupt will occur when the sensor is no longer submerged in water. This will cause one of the GPIO pins to turn High/Low (depending on the sensor model we choose). In turn, this will cause an interrupt, which willand trigger the buzzer and trigger the movement of the motor (to open the valve) and start a timer. When the time elapses, a second interrupt will occur, triggering the buzzer to stop and triggering the movement of the motor to close the valve again. </p>
-      <h5>Group Responsibilities:</h5>
+    <div class= "content"> 
+      <div class="w3-container">
+        <h3><b>Project Proposal:   <span class = "titles">February 10, 2020</span></b></h3>
+        <hr>
+        <h5>Overview:</h5>
+        <p>For our project, we propose making an automatic pet hydration station, using a STMP32L47G. This project is motivated by our upbringing in homes with pets, during which we found that hydration is essential to our pet’s health and must be reliable.<br>   Physically the system is made up of four modules: a water bowl, a water dispenser with a valve, a motor to open and close the valve and a sensor fixed within the bowl, measuring the water level.<br>    The water dispenser will refill the pet’s water bowl after the water level falls below a certain threshold at which the sensor is no longer submerged in water.<br>   The sensor’s exposure will cause an interrupt. The response will be a buzzer noise to get the animal away and the rotation of the motor, causing the valve on the bottom of the water dispenser to open for a given period of time, thus allowing water to flow into the bowl. A second interrupt will stop the buzzer close the valve by turning the motor, and thus the valve, in the opposite direction, thus stopping the water flow. As long as the sensor is submerged in water, no action will be taken. </p>
+        <h5>Peripherals:</h5>
         <ul type="disc">
-          <li>Andrew and Alice will work on the code together.</li>
-          <li>Alice will be the primary responsible for all hardware: selecting and ordering the parts (i.e. the humidity sensor, the motor, the water dispenser and the bowl)</li>
-          <li>Andrew will be the primary responsible for all software: design of peripheral interaction via serial interface.</li>
+          <li>Motor to open and close the water dispenser valve (Servo Motor)</li>
+          <li>A buzzer i2S because its related to audio which is typically that protocol</li>
+          <li>Sensor to sense water level falling below threshold using some protocol most likely I2C</li>
         </ul>
-      <h5>Block Diagram:</h5>
-        <img src="https://i.imgur.com/TwrIlMc.jpg" alt="Project Block Diagram" style="width:100%">
+        <h5>Goals:</h5>
+          <p>Our goal is to learn more about how to interface with peripherals with Microcontrollers, such as the STMP32L47G, and thereby to create a project that is useful to us and other users. Our priority is to create a reliable pet hydration station. If further time and resources are available, we would like to expand this project and build a pet feeding station, based on the same principles.</p>
+        <h5>Software Design:</h5>
+          <p>While the sensor is submerged in water, no action is taken. An interrupt will occur when the sensor is no longer submerged in water. This will cause one of the GPIO pins to turn High/Low (depending on the sensor model we choose). In turn, this will cause an interrupt, which willand trigger the buzzer and trigger the movement of the motor (to open the valve) and start a timer. When the time elapses, a second interrupt will occur, triggering the buzzer to stop and triggering the movement of the motor to close the valve again. </p>
+        <h5>Group Responsibilities:</h5>
+          <ul type="disc">
+            <li>Andrew and Alice will work on the code together.</li>
+            <li>Alice will be the primary responsible for all hardware: selecting and ordering the parts (i.e. the humidity sensor, the motor, the water dispenser and the bowl)</li>
+            <li>Andrew will be the primary responsible for all software: design of peripheral interaction via serial interface.</li>
+          </ul>
+        <h5>Block Diagram:</h5>
+        <img src="https://i.imgur.com/TwrIlMc.jpg" alt="Project Block Diagram" style="width:100% height:70%">
+      </div>
     </div>
-  </div>
   </div>
 
   <div id="About Us" class="w3-container content tab" style="display:none">
-    <div class="w3-col l8 s12">
-      <!-- About Card -->
-      <div class="w3-card w3-margin w3-margin-top">
-        <img src="https://petcostumecenter.com/wp-content/uploads/2018/08/580413_PS_PAW_BILL_SUIT.jpg" style="width:100%">
-        <div class="w3-container w3-white">
-          <h4><b>Andrew Berry</b></h4>
-          <hr>
-          <p>I am a in my third year at the University of California, Santa Barbara studing Computer Engineering. I am very excited for this project 
-          because I am very passionate applying my skills to real world applications even if it is something as simple as keeping your pets fed! I 
-          am escpecially excited to work with the STMP32L476VG discovery board microcontroller more and integrate more peripherals.</p>
-        </div>
-      </div><hr>
-    </div><hr>
-
-    <!-- Introduction menu -->
-    <div class="w3-col l4">
-      <!-- About Card -->
+    <div class="w3-card w3-margin w3-margin-top">
+      <img src="https://petcostumecenter.com/wp-content/uploads/2018/08/580413_PS_PAW_BILL_SUIT.jpg" style="width:100%">
+      <div class="w3-container w3-white">
+        <h4><b>Andrew Berry</b></h4>
+        <hr>
+        <p>I am a in my third year at the University of California, Santa Barbara studing Computer Engineering. I am very excited for this project 
+        because I am very passionate applying my skills to real world applications even if it is something as simple as keeping your pets fed! I 
+        am escpecially excited to work with the STMP32L476VG discovery board microcontroller more and integrate more peripherals.</p>
+      </div>
+    </div>
       <div class="w3-card w3-margin w3-margin-top">
         <img src="https://i.imgur.com/FFHmPJo.jpg" style="width:100%">
         <div class="w3-container w3-white">
@@ -185,41 +211,98 @@
           <hr>
           <p>I am a third year Electrical Engineering student at the University of Califronia, Santa Barbara.</p>
         </div>
-      </div><hr>
-    </div><hr>
+      </div>
   </div>
 </div>
-
-<script>
-function openTab(tabName) {
-  var i;
-  var x = document.getElementsByClassName("tab");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  document.getElementById(tabName).style.display = "block";  
-}
-
-window.onscroll = function() {scroller()};
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function scroller() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  } else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
-
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <!-- Footer -->
+<footer class="bottom-container">
+  <button id="previousButton" class="w3-button w3-black w3-padding-large w3-margin-bottom prevButton" onclick="button('Previous')">Previous</button>
+  <button id="nextButton" class="w3-button w3-black w3-padding-large w3-margin-bottom nextButton" onclick="button('Next')">Next »</button>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+
+<script>
+  var previous;
+  function openTab(tabName) {
+    var i;
+    var x = document.getElementsByClassName("tab");
+    for (i = 0; i < x.length; i++) {
+      x[i].style.display = "none";  
+    }
+    document.getElementById(tabName).style.display = "block";
+
+    // Add integration of tabs with buttons
+    x = document.getElementsByClassName("tab");
+    var currentIndex;
+    for (i = 0; i < x.length; i++) {
+      if(x[i].style.display == "block")
+        currentIndex = i;
+    }
+    if(currentIndex == x.length-1)
+      document.getElementById("nextButton").disabled = true;
+    else if(currentIndex == 0)
+      document.getElementById("previousButton").disabled = true;
+    else{
+      document.getElementById("nextButton").disabled = false;
+      document.getElementById("previousButton").disabled = false;
+    }
+
+
+    // Reset back to top of page when tabs are clicked
+    if(document.documentElement.scrollTop > 150)
+      document.documentElement.scrollTop = 126;
+    else
+      document.documentElement.scrollTop = 0;
+
+  }
+
+  function button(buttonType){
+    var i;
+    var x = document.getElementsByClassName("tab");
+    var currentIndex = 0;
+    for (i = 0; i < x.length; i++) 
+    {
+      if(x[i].style.display == "block")
+        currentIndex = i;
+      x[i].style.display = "none"; 
+    }
+    if(buttonType == 'Next')
+      currentIndex += 1;
+    else
+      currentIndex -= 1;
+    if(currentIndex == x.length-1){
+      currentIndex = x.length-1;
+      document.getElementById("nextButton").disabled = true;
+    }
+    else if(currentIndex == 0){
+      currentIndex = 0;
+      document.getElementById("previousButton").disabled = true;
+    }
+    else{
+      document.getElementById("previousButton").disabled = false;
+      document.getElementById("nextButton").disabled = false;
+    }
+    x[currentIndex].style.display = "block";
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+
+  }
+
+  window.onscroll = function() {scroller()};
+
+  var header = document.getElementById("myHeader");
+  var sticky = header.offsetTop;
+
+  function scroller() {
+    if (window.pageYOffset > sticky) {
+      header.classList.add("sticky");
+    } 
+    else{
+      header.classList.remove("sticky");
+    }
+  }
+</script>
 
 </body>
 </html>
