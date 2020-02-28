@@ -105,6 +105,52 @@
     <div class="content">
       <div class="w3-container">
         <h3><b>Weekly Progression</b></h3>
+        
+        <hr>
+        <h5><i><span class = "titles">February 28, 2020:</span></i></h5>
+        <div class="w3-container">
+          <p>In this second week of working on our hydration station, we were planning to (1) Research and buy a water dispenser valve, (2) Test the servo motor on this dispensor to allow for some time to order a stronger motor if necessary, and (3) Finish lab 3, and therefore become familiar with I2C in order to start writing code for our STEMMA Soil Sensor. The progress in each area is listed below.</p>
+          <ol>
+            <li> Research and buy a water dispenser valve:
+              <ul type="circle">
+                <li>
+                  We found a large water dispensor with a valve that opens and closes upon rotation of the handle by 90 degrees. The valve opens relatively easily, but not so easily that it leaks. The water container can hold enough water for at least a week for a pet. 
+                </li>
+              </ul>
+            </li>
+            <li>Test the servo motor on this dispensor to allow for some time to order a stronger motor if necessary.
+              <ul type="circle">
+                <li>
+                  We found out how to communicate with the servo motor via pulse width modulation (PWM). On the data sheet, we found that the position of the motor at 0 degrees correspons a pulse of 1ms, a position at 90 degrees to a pulse of 1.5ms, and a position at 180 degrees to a pulse of 2ms. The period must be 20ms in total. If we operate at upcounting, rising edge, low true mode, we have that the duty cycle is: CRR/(ARR+1). We chose the clock of 4MHz, and a prescalor of 3. Thus, tclk = 100us. Thus choosing ARR = 199, gives a CRR = 10 for a position of 0 degrees, CRR = 15 for a position of 90 degrees, and CRR = 20 for a position of 180 degrees. Using the code from lab 2, we tried rotating the motor from position 0 to position 90, to 180 and back (with some delay in between actions). 
+                </li>
+                <li>
+                  We then tested the strength of our servo motor. We firmly taped our motor to the rotational valve. We held the motor in place so that it could exert its force on the valve to open it. Unfortunately, our motor was too weak to succeed. We now have to find out how much stronger our new motor needs to be, and order it. 
+                </li>
+              </ul>
+            </li>
+            <li>Finish lab 3, and therefore become familiar with I2C in order to start writing code for our STEMMA Soil Sensor.
+              <ul type="circle">
+                <li>We successfully finieshed lab 3 and are now familiar with I2C communication. We intended to modify our code and run it on our STEMMA Soil Sensor. However, we needed 10k Ohm pull-up resisotrs, which we did not have on hand during our group meeting. As a result, Andrew bought these resistors at the machine shop today. Instead, during the meeting, we were examining the data sheet of the STEMMA Soil Sensor and our code from lab 2, to understand what needed to be added and modified in the code. It was difficult to test our modifications, as we did not have the resistors to connect to the sensor. We will meet again and connect the sensor correclty in order to modify and test the code. 
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p>To do next week:</p>
+          <ul tpye="disc">
+            <li>
+              Research and buy a more powerful servo motor. 
+            </li>
+            <li>
+              Modify and test the PWM code to correspond to our new servo motor (if it arrives in time).  
+            </li>
+            <li>
+              Connect the STEMMA Soil Sensor via the two 10k Ohm pull-up resistors and modify and test the code the get readings from the sensor.
+            </li>
+          </ul>
+        </div>
+        <br>
+        <hr />
+
         <hr>
         <h5><i><span class = "titles">February 21, 2020:</span></i></h5>
         <div class="w3-container">
