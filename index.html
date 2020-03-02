@@ -95,12 +95,12 @@
   </header>
 
   <div class="w3-bar header" id="myHeader">
-    <button class="w3-bar-item w3-button" onclick="openTab('Weekly Progress')">Weekly Progress</button>
+    <button class="w3-bar-item w3-button" onclick="openTab('Weekly Progression')">Weekly Progression</button>
     <button class="w3-bar-item w3-button" onclick="openTab('Project Proposal')">Project Proposal</button>
     <button class="w3-bar-item w3-button" onclick="openTab('About Us')">About Us</button>
   </div>
 
-  <div class="tab" id="Weekly Progress">
+  <div class="tab" id="Weekly Progression">
     <img src="https://www.w3schools.com/w3images/bridge.jpg" alt="Norway" style="width:100%">
     <div class="content">
       <div class="w3-container">
@@ -261,7 +261,7 @@
 <!-- </div> -->
   <!-- Footer -->
 <footer class="bottom-container">
-  <button id="previousButton" class="w3-button w3-black w3-padding-large w3-margin-bottom prevButton" onclick="button('Previous')">Previous</button>
+  <button id="previousButton" class="w3-button w3-black w3-padding-large w3-margin-bottom prevButton" disabled onclick="button('Previous')">Previous</button>
   <button id="nextButton" class="w3-button w3-black w3-padding-large w3-margin-bottom nextButton" onclick="button('Next')">Next »</button>
 </footer>
 
@@ -282,10 +282,14 @@
       if(x[i].style.display == "block")
         currentIndex = i;
     }
-    if(currentIndex == x.length-1)
+    if(currentIndex == x.length-1){
       document.getElementById("nextButton").disabled = true;
-    else if(currentIndex == 0)
+      document.getElementById("previousButton").disabled = false;
+    }
+    else if(currentIndex == 0){
+      document.getElementById("nextButton").disabled = false;
       document.getElementById("previousButton").disabled = true;
+    }
     else{
       document.getElementById("nextButton").disabled = false;
       document.getElementById("previousButton").disabled = false;
