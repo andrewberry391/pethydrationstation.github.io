@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="shortcut icon" type="image/png" href="https://favicon.io/assets/og_image-1e61f3410f40440ed43b2e5b2aaf9148035394b59a89ad439e0e45372a97a249.png">
   <title>
     Andrew Berry and Alice Patig
     ECE 153B Final Project Site
@@ -12,6 +13,33 @@
     body {
       margin: 0;
       font-family: Cambria;
+    }
+    .bar-button {
+      background-color: #007183; /* Green */
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+    }
+
+    .bar-button:hover {
+      background-color: #004752;
+      border: none;
+      color: white;
+    }
+
+    .title-button {
+      background-color: #008da3;
+      text-align: center;
+      font-family: Cambria;
+      border: none;
+      color: white;
     }
 
     .top-container {
@@ -82,22 +110,21 @@
       margin-bottom: 20px; 
     } 
   </style>
-  <link rel="icon" href="http://example.com/favicon.png">
 </head>
 <body style="background: #eff9fa">
 
 <!-- <div class="w3-content" style="max-width:1400px"> -->
 
   <!-- Title of page and names -->
-  <header class="top-container" style="color:#fff"> 
-    <h1><b>Pet Hydration Station</b></h1>
+  <header class="top-container" style="color:#fff">
+    <button class="title-button" onClick="window.location.href=window.location.href"><h1><b>Pet Hydration Station</b></h1></button>
     <p>Made by Alice Patig and Andrew Berry</p>
   </header>
 
   <div class="w3-bar header" id="myHeader">
-    <button class="w3-bar-item w3-button" onclick="openTab('Weekly Progression')">Weekly Progression</button>
-    <button class="w3-bar-item w3-button" onclick="openTab('Project Proposal')">Project Proposal</button>
-    <button class="w3-bar-item w3-button" onclick="openTab('About Us')">About Us</button>
+    <button class="w3-bar-item bar-button" onclick="openTab('Weekly Progression')">Weekly Progression</button>
+    <button class="w3-bar-item bar-button" onclick="openTab('Project Proposal')">Project Proposal</button>
+    <button class="w3-bar-item bar-button" onclick="openTab('About Us')">About Us</button>
   </div>
 
   <div class="tab" id="Weekly Progression">
