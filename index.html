@@ -133,7 +133,54 @@
       <div class="w3-container">
         <h3><b>Weekly Progression</b></h3>
         
-         <hr>
+        <hr>
+        <h5><i><span class = "titles">March 13, 2020:</span></i></h5>
+        <div class="w3-container">
+          <p>In our fourth week of the pet hydration station we were planning on bringing thw whole project together to completion. This involved getting the I2C sensor to work, getting the bluetooth UART communication to work, making the peripherals interact correctly with the Servo motor, printing a case for the servo to be hot glued to the water dispenser, and cleaning up all of the wires and hardware.</p>
+          <ol>
+            <li> Getting I2C to work:
+              <ul type="circle">
+                <li>
+                  Unfortunately after a long time spent trying to research and debug the I2C soil moisture sensor the with help of the TA's, we could not figure out what was wrong with our setting for I2C which was resulting in the sensor sending the data early and then the data expired before we could read it. We believe this was as a result of a timing issue and due to poor documentation of the sensor online we could not find a solution to make this work as planned. Although, we have changed out plan for the project to rather than using I2C we are going to use SPI with the internal Gyroscope as our second communication and just for sake of using the soil sensor we are going to plug it into the arduino to use arduino libraries and then have a digitial write from the arduino to a GPIO on the STM32 to let the STM32 know when the sensor has passed a threshold (not submerged in water) to ensure that the bowl does not overflow. After this changed we still have more than two external peripherals and two types of communication.
+                </li>
+              </ul>
+            </li>
+            <li>Getting bluetooth UART communication to work:
+              <ul type="circle">
+                <li>
+                This was successful in getting the bluetooth communication to work with termite to trigger the water to dispense manually if the owner would like to refill it manually. 
+                </li>
+              </ul>
+             </li>
+                
+            <li>Making the peripherals interact correctly with the Servo motor:
+              <ul type="circle">
+                <li>
+                This was successful all of the peripherals interact correctly with the servo. If the soil sensor is out of water the servo opens until the sensor is submerged, if the board is tited in the X direction then the servo opens for a short period of time. If a command is sent through Termite to the bluetooth peripheral the servo will open the valve.    
+                </li>
+              </ul>
+            </li>
+            <li>Printing a case for the servo to be hot glued to the water dispenser:
+              <ul type="circle">
+                <li>
+                 
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <p>To do next week:</p>
+          <ul tpye="disc">
+            <li>
+              Modify and test the PWM code to correspond to our new servo motor. 
+            </li>
+            <li>
+              Await response from Adafruit and modify code accordinglty to get reliable readings from STEMMA. 
+            </li>
+          </ul>
+        </div>
+        <br>
+
+        <hr>
         <h5><i><span class = "titles">March 6, 2020:</span></i></h5>
         <div class="w3-container">
           <p>In this third week of working on our hydration station, we were planning to (1) Research and buy a more powerful servo motor, (2) Modify and test the PWM code to correspond to our new servo motor (if it arrives in time), and (3) Connect the STEMMA Soil Sensor via the two 10k Ohm pull-up resistors and modify and test the code the get readings from the sensor.</p>
